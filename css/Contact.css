@@ -148,7 +148,7 @@
     padding: 40px 0;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Stack footer content vertically */
+    flex-direction: column;
     align-items: center;
 }
 
@@ -156,13 +156,13 @@
     width: 100%;
     max-width: 1200px;
     display: flex;
-    flex-direction: column; /* Arrange children (rows) vertically */
+    flex-direction: column; 
     align-items: center;
 }
 
 .footer .row {
     display: flex;
-    justify-content: space-between; /* Space between columns */
+    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
 }
@@ -171,7 +171,7 @@
     flex: 1;
     padding: 0 15px;
     text-align: left;
-    min-width: 200px; /* Prevent columns from being too narrow */
+    min-width: 200px; 
 }
 
 .footer .footer-col h4 {
@@ -220,17 +220,16 @@
 }
 
 .rowena {
-    width: 100%; /* Full width for the paragraph */
+    width: 100%; 
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
     color: #b3b3b3;
 }
 
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .footer .row {
-        flex-direction: column; /* Stack columns on smaller screens */
+        flex-direction: column;
         align-items: center;
     }
     .footer .footer-col {
@@ -241,7 +240,7 @@
 
 @media (max-width: 576px) {
     .footer .footer-col {
-        width: 100%; /* Full width for each column on very small screens */
+        width: 100%;
         margin-bottom: 30px;
     }
 }
