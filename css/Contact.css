@@ -14,10 +14,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(images/back.jpg);
+    background-image: url(images/back.jpg);
     background-size: cover;
 }
-.Contact.content
+.Contact .content
 {
   max-width: 800px;
   text-align: center;  
