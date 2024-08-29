@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scriptReg.js"></script>
+</head>
+<body class="body2">
+    <div class="box">
+        <div class="container1">
+            <div class="row">
+                <div class="col">
+                    <h1>Create Account</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <form action="connect.php" method="post" name="regForm" enctype="multipart/form-data" onsubmit="return validateForm(event)">
+                        <div class="sign-inline">
+                            <div class="login-group">
+                                <label for="fname">First Name:</label>
+                                <div class="input-field">
+                                    <input type="text" id="fname" name="fname" required>
+                                </div>
+                            </div>
+                            <div class="login-group">
+                                <label for="lname">Last Name:</label>
+                                <div class="input-field">
+                                    <input type="text" id="lname" name="lname" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="login-group">
+                            <label for="email">E-mail:</label>
+                            <div class="input-field">
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="radio-group">
+                            <label for="gender">Gender:</label>
+                            <input type="radio" name="gender" value="male" id="male" required>
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender" value="female" id="female" required>
+                            <label for="female">Female</label>
+                        </div>
+
+                        <div class="login-group">
+                            <label for="password">Password:</label>
+                            <div class="input-field">
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                        </div>
+                        <div class="login-group">
+                            <label for="retypepassword">Retype Password:</label>
+                            <div class="input-field">
+                                <input type="password" id="retypepassword" name="retypepassword" required>
+                            </div>
+                        </div>
+
+                        <div class="check">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span>I agree to the Terms and Conditions</span>
+                        </div>
+
+                        <div class="login-group">
+                            <div class="button-group">
+                                <input type="submit" value="REGISTER" class="submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>    
+        </div>
+    </div>
+</body>
+</html>
