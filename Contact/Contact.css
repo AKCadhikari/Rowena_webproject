@@ -1,0 +1,330 @@
+/*contact us*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.Contact
+{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("Images/bgc.jpg");
+    background-size: cover;
+}
+.Contact .content
+{
+  max-width: 800px;
+  text-align: center;  
+}
+.h2
+{
+    font-size: 36px;
+    font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.p
+{
+    font-weight: 100;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.container2
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.container2 .contactInfo
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container2 .contactInfo .box
+{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.container2 .contactInfo .box .icon
+{
+  min-width: 60px;
+  height: 60px;
+  background:transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+  overflow: hidden; 
+  background-color: #000000;
+}
+
+  .container2 .contactInfo .box .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image maintains aspect ratio and fits the container */
+    border-radius: 50%; /* Ensures the image conforms to the circular shape */
+}
+
+
+
+.container2 .contactInfo .box .text
+{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+.container2 .contactInfo .box .text h3
+{
+    font-weight: 500;
+    color: #00bcd4;
+}
+.contactForm 
+{
+    width: 40%;
+    padding: 40px;
+    background:rgba(255,255,255,1.00);
+    margin-top: 30px;
+}
+.contactForm h2
+{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contactForm .inputBox
+{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #a51313;
+    outline: none;
+    resize: none;
+}
+.contactForm .inputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+    
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.contactForm .inputBox input[type="submit"]
+{
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+/*footer*/
+
+.footer {
+  background-color: #082551; /* Dark background */
+  padding: 0;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 20px;
+ 
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-between; /* Spread the footer columns evenly */
+  flex-wrap: wrap; /* Wrap to the next line if needed */
+  
+  
+}
+
+.footer-col {
+  flex: 1; /* Allow each column to take equal space */
+  padding: 0 15px; /* Padding around each column */
+  min-width: 200px; /* Ensure minimum width */
+  margin-bottom: 20px;
+  
+  
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block; /* Ensures h4 stays in the same line */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 20px;
+  
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #007bff;
+}
+
+.footer-col .social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-col .social-links a {
+  margin: 0 10px;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #007bff;
+}
+
+.rowena {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/*responsive*/
+@media(max-width:767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom:30px;
+    }
+}
+
+@media(max-width:574px){
+    .footer-col{
+        width: 100%;
+    }
+}
+
+
+
+/*Navbar*/
+
+/* CSS for Navbar Alignment and Spacing */
+.navbar-custom {
+  background-color: #052c54; /* Customize as needed */
+  padding: 10px 20px; /* Adjust padding for better spacing */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  display: flex;
+  align-items: center; /* Vertically center align the items */
+  font-size: 18px; /* Adjust the font size as needed */
+  padding: 8px 15px; /* Adjust padding for alignment and spacing */
+  color: #fff;
+}
+
+.navbar-custom .navbar-nav .nav-item {
+  margin-right: 20px; /* Add space between the nav items */
+}
+
+.navbar-custom .navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Remove extra margin from the last item */
+}
+
+.navbar-custom .navbar-nav .nav-item.active .nav-link {
+  font-weight: bold; /* Highlight the active item */
+margin-right:20px;
+}
+
+.navbar-custom .navbar-nav .dropdown-menu {
+  background-color: #f8f9fa; /* Match the background of the navbar */
+}
+
+.navbar-custom .form-inline .form-control {
+  width: 200px; /* Adjust the search input width */
+}
+
+.navbar-custom .form-inline .btn {
+  margin-left: 10px; /* Add space between search button and login */
+}
+
+.navbar-custom .log {
+  margin-left: 20px; /* Space the login link from the search form */
+}
+/* Add margin to create space between the logo and the Home button */
+.navbar-custom .logo {
+  margin-right: 25px; /* Adjust the margin value to increase or decrease the gap */
+}
+
+.navbar-custom .navbar-nav .nav-item {
+  margin-right: 25px; /* Adds space between the nav items */
+}
+
+.navbar-custom .navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.btn{
+  border-radius: 50%;
+  color: white;
+  border-color: #007bff;
+}
