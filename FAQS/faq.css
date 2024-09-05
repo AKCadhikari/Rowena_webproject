@@ -1,0 +1,237 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d3c64 !important;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.faq-container {
+    max-width: 600px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.faq-item.active .faq-question::after {
+    content: '-';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #666666;
+    padding: 0 10px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 100px;
+    padding: 10px 10px 0;
+}
+
+
+
+
+/*Navbar*/
+
+/* CSS for Navbar Alignment and Spacing */
+.navbar-custom {
+    background-color: #052c54; /* Customize as needed */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .navbar-nav .nav-link {
+    display: flex;
+    align-items: center; /* Vertically center align the items */
+    font-size: 18px; /* Adjust the font size as needed */
+    padding: 8px 15px; /* Adjust padding for alignment and spacing */
+    color: #fff;
+  }
+  
+  .navbar-custom .navbar-nav .nav-item {
+    margin-right: 20px; /* Add space between the nav items */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item:last-child {
+    margin-right: 0; /* Remove extra margin from the last item */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item.active .nav-link {
+    font-weight: bold; /* Highlight the active item */
+  margin-right:20px;
+  }
+  
+  .navbar-custom .navbar-nav .dropdown-menu {
+    background-color: #f8f9fa; /* Match the background of the navbar */
+  }
+  
+  .navbar-custom .form-inline .form-control {
+    width: 200px; /* Adjust the search input width */
+  }
+  
+  .navbar-custom .form-inline .btn {
+    margin-left: 10px; /* Add space between search button and login */
+  }
+  
+  .navbar-custom .log {
+    margin-left: 20px; /* Space the login link from the search form */
+  }
+  /* Add margin to create space between the logo and the Home button */
+  .navbar-custom .logo {
+    margin-right: 25px; /* Adjust the margin value to increase or decrease the gap */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item {
+    margin-right: 25px; /* Adds space between the nav items */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .btn{
+    border-radius: 50%;
+    color: white;
+    border-color: #007bff;
+  }
+
+
+  /*footer*/
+
+.footer {
+    background-color: #082551; /* Dark background */
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+   
+  }
+  
+  .footer .row {
+    display: flex;
+    justify-content: space-between; /* Spread the footer columns evenly */
+    flex-wrap: wrap; /* Wrap to the next line if needed */
+    
+    
+  }
+  
+  .footer-col {
+    flex: 1; /* Allow each column to take equal space */
+    padding: 0 15px; /* Padding around each column */
+    min-width: 200px; /* Ensure minimum width */
+    margin-bottom: 20px;
+    
+    
+  }
+  
+  .footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block; /* Ensures h4 stays in the same line */
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 20px;
+    
+  }
+  
+  .footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+    color: #007bff;
+  }
+  
+  .footer-col .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .footer-col .social-links a {
+    margin: 0 10px;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-col .social-links a:hover {
+    color: #007bff;
+  }
+  
+  .rowena {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  
+  /*responsive*/
+  @media(max-width:767px){
+      .footer-col{
+          width: 50%;
+          margin-bottom:30px;
+      }
+  }
+  
+  @media(max-width:574px){
+      .footer-col{
+          width: 100%;
+      }
+  }
+  

@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    min-height: 100vh;
+    background: #0d3c64;
+    background-size: auto;
+    max-width: 1600px;
+}
+
+.container form {
+    padding: 20px;
+    width: 450px;
+    background: #cbdbff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+
+.container form h2 {
+    text-align: center;
+}
+
+.container form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container form .row .col {
+    flex: 1 1 250px;
+}
+
+.container form .row .col .title {
+    font-size: 20px;
+    color: #333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.container form .row .col .inputBox {
+    margin: 15px 0;
+}
+
+.container form .row .col .inputBox span {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.container form .row .col .inputBox input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+    text-transform: none;
+    border-radius: 5px;
+}
+
+.container form .row .col .inputBox input:focus {
+    border: 1px solid #000;
+}
+
+.container form .row .col .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.container form .row .col .flex .inputBox {
+    margin-top: 5px;
+}
+
+.container form .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: #27ae60;
+    color: #000000;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container form .submit-btn:hover {
+    background: #2ecc71;
+}
+
+.payment-options {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.payment-options .title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.payment-options .category {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.payment-options .category label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.payment-options .category label:hover {
+    border-color: #6064b6;
+    background-color: #e6e7ff;
+}
+
+.payment-options .category label.selected {
+    border-color: #6064b6;
+    background-color: #e6e7ff;
+}
+
+.payment-options .imgName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-options .imgContainer {
+    width: 80px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.payment-options .imgContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.payment-options .name {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.payment-options .check {
+    font-size: 20px;
+    color: #6064b6;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.payment-options .category label input[type="radio"] {
+    display: none;
+}
+
+.payment-options .category label input[type="radio"]:checked + .imgName + .check {
+    visibility: visible;
+}
+
+.visaMethod {
+    border: 2px solid #1a1f71;
+    background-color: #ffffff;
+}
+
+.mastercardMethod {
+    border: 2px solid #ff5f00;
+    background-color: #ffffff;
+}
+
+
+
+.rowena {
+    background-color: #000;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.rowena p {
+    margin: 0;
+}
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+
+
+/*Navbar*/
+
+/* CSS for Navbar Alignment and Spacing */
+.navbar-custom {
+    background-color: #052c54; /* Customize as needed */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .navbar-nav .nav-link {
+    display: flex;
+    align-items: center; /* Vertically center align the items */
+    font-size: 18px; /* Adjust the font size as needed */
+    padding: 8px 15px; /* Adjust padding for alignment and spacing */
+    color: #fff;
+  }
+  
+  .navbar-custom .navbar-nav .nav-item {
+    margin-right: 20px; /* Add space between the nav items */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item:last-child {
+    margin-right: 0; /* Remove extra margin from the last item */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item.active .nav-link {
+    font-weight: bold; /* Highlight the active item */
+  margin-right:20px;
+  }
+  
+  .navbar-custom .navbar-nav .dropdown-menu {
+    background-color: #f8f9fa; /* Match the background of the navbar */
+  }
+  
+  .navbar-custom .form-inline .form-control {
+    width: 200px; /* Adjust the search input width */
+  }
+  
+  .navbar-custom .form-inline .btn {
+    margin-left: 10px; /* Add space between search button and login */
+  }
+  
+  .navbar-custom .log {
+    margin-left: 20px; /* Space the login link from the search form */
+  }
+  /* Add margin to create space between the logo and the Home button */
+  .navbar-custom .logo {
+    margin-right: 25px; /* Adjust the margin value to increase or decrease the gap */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item {
+    margin-right: 25px; /* Adds space between the nav items */
+  }
+  
+  .navbar-custom .navbar-nav .nav-item:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .btn{
+    border-radius: 50%;
+    color: white;
+    border-color: #007bff;
+  }
+
+
+  
+/*footer*/
+
+.footer {
+  background-color: #0d3c64; /* Dark background */
+
+  padding-bottom: 20px;
+ 
+}
+

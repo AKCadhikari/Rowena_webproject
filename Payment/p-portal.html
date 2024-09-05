@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROWENA-PAY</title>
+    <link rel="stylesheet" href="p-p.css"> <!-- Updated CSS file for popups -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="payment" id="payment-form">
+        <div class="payment-logo">
+            <p>ROWENA</p>
+        </div>
+
+        <h2>Payment Gateway</h2>
+
+        <div class="form">
+            <div class="card space icon-relative">
+                <label class="label">Card Holder :</label>
+                <input type="text" id="card-holder" class="input" placeholder="card holder's name">
+                <i class="fas fa-user fa-beat" style="color: #0d3c64;"></i>
+            </div>
+
+            <div class="card space icon-relative">
+                <label class="label">Card Number :</label>
+                <input type="text" id="card-number" class="input" placeholder="card number" data-mask="0000 0000 0000 0000">
+                <i class="far fa-credit-card fa-beat" style="color: #0d3c64;"></i>
+            </div>
+            <div class="card-grp space">
+                <div class="card-item icon-relative">
+                    <label class="label">Valid Thru :</label>
+                    <input type="text" id="valid-thru" class="input" placeholder="mm / yy" data-mask="00 / 00">
+                    <i class="far fa-calendar-alt fa-beat" style="color: #0d3c64;"></i>
+                </div>
+
+                <div class="card-item icon-relative">
+                    <label class="label">CVC :</label>
+                    <input type="text" id="cvc" class="input" placeholder="cvc" data-mask="000">
+                    <i class="fas fa-lock fa-beat" style="color: #0d3c64;"></i>
+                </div>
+            </div>
+
+            <div class="save-card space">
+                <input type="checkbox" id="save-card">
+                <label for="save-card" class="save-card-label">Save My Card</label>
+            </div>
+
+            <input type="submit" value="Make Your Payment" class="submit-btn" id="submit-payment">
+        </div>
+    </div>
+</div>
+
+<!-- Popup overlay and message containers -->
+<div class="popup-overlay" id="popup-overlay"></div>
+
+<!-- Confirmation Popup -->
+<div class="popup" id="confirm-popup">
+    <h2>Confirm Payment</h2>
+    <p>Are you sure you want to proceed with the payment?</p>
+    <button type="button" onclick="confirmPayment()">Confirm</button>
+    <button type="button" onclick="cancelPayment()">Cancel</button>
+</div>
+
+<div class="popup" id="success-popup">
+    <img src="images/check.png" alt="Checkmark">
+    <h2>Thank You!</h2>
+    <p>Your Payment has been Successful.</p>
+    <button type="button" onclick="closePopup('success-popup')">OK</button>
+</div>
+
+<div class="popup" id="error-popup">
+    <img src="images/delete.png" alt="Exclamation Mark">
+    <h2>OOPS!</h2>
+    <p>Please complete the portal!</p>
+    <button type="button" onclick="closePopup('error-popup')">OK</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.8/jquery.mask.min.js"></script>
+<script src="p-p.js"></script> <!-- Updated JS file for popups -->
+</body>
+</html>
