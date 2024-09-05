@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews-Rowena Perfume</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-size: contain;
+        }
+
+        header {
+            background-color: #082551;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-family: sans-serif;
+            
+            
+        }
+        h1{
+            font-weight: 200;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+       
+        .user-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-details img {
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+        }
+
+        .user-details span {
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .reviews-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+
+        .review:last-child {
+            border-bottom: none;
+        }
+
+        .review img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .review-details {
+            flex-grow: 1;
+        }
+
+        .review h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .review p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .rating {
+            font-size: 18px;
+            color: #ff9900;
+        }
+
+        .review-date {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+ .footer {
+  background-color: #082551; /* Dark background */
+  padding: 10px 0;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+ 
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-between; /* Spread the footer columns evenly */
+  flex-wrap: wrap; /* Wrap to the next line if needed */
+  
+}
+
+.footer-col {
+  flex: 1; /* Allow each column to take equal space */
+  padding: 0 15px; /* Padding around each column */
+  min-width: 200px; /* Ensure minimum width */
+  margin-bottom: 20px;
+  
+  
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block; /* Ensures h4 stays in the same line */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 20px;
+  
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #007bff;
+}
+
+.footer-col .social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-col .social-links a {
+  margin: 0 10px;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #007bff;
+}
+
+.rowena {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/*responsive*/
+@media(max-width:767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom:30px;
+    }
+}
+
+@media(max-width:574px){
+    .footer-col{
+        width: 100%;
+    }
+}
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; 
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .sign-in-button {
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sign-in-button:hover {
+            background-color: #0056b3;
+        }
+
+        .feedback-form {
+            margin-top: 20px;
+            display: none; /* Hidden by default; shown if user is signed in */
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .feedback-form button {
+            color: #fff;
+            background-color: #28a745;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .feedback-form button:hover {
+            background-color: #218838;
+        }
+
+        /* Star Rating CSS */
+        .star-rating {
+            display: flex;
+            align-items: center;
+            direction: rtl; /* Set direction to RTL for correct star marking */
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            cursor: pointer;
+        }
+
+        .star-rating input:checked ~ label {
+            color: #ff9900;
+        }
+
+        .star-rating input:checked ~ input ~ label {
+            color: #ff9900;
+        }
+
+        .star-rating input:checked ~ input ~ input ~ label {
+            color: #ff9900;
+        }
+
+        .star-rating input:checked ~ input ~ input ~ input ~ label {
+            color: #ff9900;
+        }
+
+        .star-rating input:checked ~ input ~ input ~ input ~ input ~ label {
+            color: #ff9900;
+        }
+        
+
+        /*Navbar*/
+
+/* CSS for Navbar Alignment and Spacing */
+.navbar-custom {
+  background-color: #052c54; /* Customize as needed */
+  padding: 10px 20px; /* Adjust padding for better spacing */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  display: flex;
+  align-items: center; /* Vertically center align the items */
+  font-size: 18px; /* Adjust the font size as needed */
+  padding: 8px 15px; /* Adjust padding for alignment and spacing */
+}
+
+.navbar-custom .navbar-nav .nav-item {
+  margin-right: 20px; /* Add space between the nav items */
+}
+
+.navbar-custom .navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Remove extra margin from the last item */
+}
+
+.navbar-custom .navbar-nav .nav-item.active .nav-link {
+  font-weight: bold; /* Highlight the active item */
+margin-right:20px;
+}
+
+.navbar-custom .navbar-nav .dropdown-menu {
+  background-color: #f8f9fa; /* Match the background of the navbar */
+}
+
+.navbar-custom .form-inline .form-control {
+  width: 200px; /* Adjust the search input width */
+}
+
+.navbar-custom .form-inline .btn {
+  margin-left: 10px; /* Add space between search button and login */
+}
+
+.navbar-custom .log {
+  margin-left: 20px; /* Space the login link from the search form */
+}
+/* Add margin to create space between the logo and the Home button */
+.navbar-custom .logo {
+  margin-right: 25px; /* Adjust the margin value to increase or decrease the gap */
+}
+
+.navbar-custom .navbar-nav .nav-item {
+  margin-right: 25px; /* Adds space between the nav items */
+}
+
+.navbar-custom .navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.btn {
+  border-radius: 50%;
+  color: white;
+  border-color: #007bff;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    
+     <!--Nav Bar-->
+     <nav class="navbar navbar-expand-lg navbar-custom">
+        <img class="logo rounded-circle" src="../../Rowena Perfume Website/Home/images/lg.jpeg" alt="Logo" width="75">
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+           <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                   <a class="nav-link" href="../Home/Home.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="../Products/Mens/mens.html">Mens</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="../Products/Womens/women.html">Womens</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="../Products/Unisex/uni.html">Unisex</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="../Brandsd/index.html">Brands</a>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       More
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                       <a class="dropdown-item" href="../About Us/index.html">About Us</a>
+                       <a class="dropdown-item" href="../Contact/Contact.html">Contact Us</a>
+                       <a class="dropdown-item" href="../Our Service/ourservices.html">Our Service</a>
+                       <div class="dropdown-divider"></div>
+                       <a class="dropdown-item" href="Review.html">Feedback Area</a>
+                   </div>
+               </li>
+           </ul>
+           <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+               <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+           </form>
+           <a class="log" href="../Loging/login.html" target="_blank" title="Login"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
+       </div>
+   </nav>
+
+
+
+    <!-- Header -->
+    <header>
+        <h1>Rowena Perfumes</h1>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html">Contact Us</a>
+        <a href="products.html">Brands</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="#" id="signInBtn">Sign In</a>
+        <div id="userDetails" class="user-details" style="display: none;">
+            <img src="male_icon.png" alt="User Icon" id="userIcon">
+            <span id="userName">User Name</span>
+            <button id="signOutBtn" class="sign-in-button">Sign Out</button>
+        </div>
+    </nav>
+
+    <!-- Reviews Container -->
+    <div class="reviews-container">
+        <!-- Existing reviews -->
+        <div class="review">
+            <img src="../Home/images/loging.jpg" alt="John Doe">
+            <div class="review-details">
+                <h3 id="reviewerName">Ajith Kumara</h3>
+                <p>This product is amazing! It exceeded my expectations.</p>
+                <div class="rating" id="reviewRating">★★★★★</div>
+                <p class="review-date">Reviewed on: 2023-12-25</p>
+            </div>
+        </div>
+        <!-- Add more reviews here -->
+
+        <!-- Feedback Form (conditionally displayed) -->
+        <div class="feedback-form" id="feedbackForm">
+            <h3>Leave a Review</h3>
+            <textarea id="feedback" rows="5" placeholder="Write your review here..."></textarea>
+            <div class="star-rating" id="starRating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">☆</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">☆</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">☆</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">☆</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">☆</label>
+            </div>
+            <button type="button" onclick="submitFeedback()">Submit</button>
+        </div>
+
+        <!-- Sign-in prompt (conditionally displayed) -->
+        <div id="signInPrompt">
+            <p>Please <a href="#" id="signInLink">sign in</a> to leave feedback.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col"><br><br><br>
+                    <h4 class="get"><u>Company</u></h4>
+                    <ul>
+                        <li><a href="../About Us/index.html">About us</a></li>
+                        <li><a href="../Contact/Contact.html">Contact Us</a></li>
+                         <li><a href="../Our Service/ourservices.html">Our services</a></li>
+                         <li><a href="Review.html">Rate Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"><br><br><br>
+                    <h4 class="get"><u>Get Help</u></h4>
+                    <ul>
+                        <li><a href="../FAQS/faq.html">FAQ</a></li>
+                        <li><a href="../Addtocart/addtocart.html" target="_blank">Order Status</a></li>
+                        <li><a href="../Payment/checkout.html" target="_blank">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"><br><br>
+                   <br> <h4 class="get"><u>Online Store</u></h4>
+                    <ul>
+                        <li><a href="../../Rowena Perfume Website/Products/Mens/mens.html">Mens</a></li>
+                        <li><a href="../../Rowena Perfume Website/Products/Womens/women.html">Womens</a></li>
+                         <li><a href="../../Rowena Perfume Website/Products/Unisex/uni.html">Unisex</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                   <br><br><br> <h4 class="get"><u>Follow Us</u></h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/qjfSonHYnJafczkX/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.threads.net/@rowena_perfume?xmt=AQGzDa6-O6y9fUAYK9pnrw9B2ZKXp6_4tzAd3uvW6Dh6NfM" target="_blank"><i class="fa-brands fa-threads"></i></a>
+                        <a href="https://www.instagram.com/rowena_perfume?utm_source=qr&igsh=YmR1NzJwYWhrOGhr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@rowenmsb512?_t=8pMfELC8dtp&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="rowena">
+        <p class="par">&copy;  ROWENA Perfumes Store | 2024 - All rights reserved. | Colombo, Sri Lanka </p>
+        </div>
+    </footer>
+
+    <!-- Sign-In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="signInForm">
+                <h2>Sign In</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br><br>
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <br><br>
+                    <button type="button" class="sign-in-button" id="signInSubmit">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+      // Get the modal
+var modal = document.getElementById("signInModal");
+
+// Get the link that opens the modal
+var signInLink = document.getElementById("signInLink");
+
+// Get the <span> element that closes the modal
+var closeBtn = document.querySelector(".close");
+
+// When the user clicks on the link, open the modal
+signInLink.onclick = function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Optionally, close the modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+        // Toggle Sign-In Modal
+        const signInBtn = document.getElementById('signInBtn');
+        const signInModal = document.getElementById('signInModal');
+        const closeModal = document.querySelector('.modal .close');
+        const signInForm = document.getElementById('signInForm');
+        const signOutBtn = document.getElementById('signOutBtn');
+        const userDetails = document.getElementById('userDetails');
+        const signInPrompt = document.getElementById('signInPrompt');
+        const feedbackForm = document.getElementById('feedbackForm');
+        const userName = document.getElementById('userName');
+        const userIcon = document.getElementById('userIcon');
+        const starRating = document.getElementById('starRating');
+        const reviewRating = document.getElementById('reviewRating');
+
+        signInBtn.onclick = () => {
+            signInModal.style.display = 'block';
+        }
+
+        closeModal.onclick = () => {
+            signInModal.style.display = 'none';
+        }
+
+        window.onclick = (event) => {
+            if (event.target == signInModal) {
+                signInModal.style.display = 'none';
+            }
+        }
+
+        // Sign-In Functionality
+        document.getElementById('signInSubmit').onclick = () => {
+            // Get user input
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const gender = document.getElementById('gender').value;
+
+            // Update user details
+            userName.textContent = username;
+            userIcon.src = gender === 'male' ? 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCAFHAUgDASIAAhEBAxEB/8QAHAABAQACAwEBAAAAAAAAAAAAAAEGBwIFCAQD/8QAUBAAAQMCBAQDBgIIAgMMCwAAAQACAwQRBSExQQYSUWEycYEHEyKRobEUQhUjUmJygsHRkqIz4fAWFyRDVGNzg5OjssIlNDZEdJWztMPT8f/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A20TbuTogvbNXuuBJcbDw7n+yCg8xy06quIaLoSGgfQLiBc8ztdh0QchfU77KF2fKNd+yEk/C3Xc9EADR9SUF01UBJz227qePPbYdVyJtYAZnQII51rDc6BUX3KgFszmTqoSXZDQanr2CC3uctBqf7KkgDP0UJDR2GQC+WsrqDDoXVeIVUFNA3Lnne1jb62bfMnoAg+sX1PyUJN7NFzv0C1xjHtSoYueLBKN1U4XAqqzmigv1ZELSEeZatfYpxRxPjJcK3EpzC7L8PTuMFNboY47A+t0G7cR4t4UwouZV4rTe+be8NOTUTB37JZDzEHzssRrvatQMLm4dhNRNs2SslZA2/XkjD3fULU+Q0y8lFBmtX7S+Magn3DqKjacgKenEjh/NUFw/yro6jini2q5/fY3iJD9WxTuhZ/hh5QumRB+stRUzHmnnnld1mlfIfm8lfnn1U1VQRM0RB+kU9TCQ6GeaJ3WKV8Z+bCF2lPxPxZS8vucbxIBujZJ3Ss/wy8wXTogzSk9pXGVOW++koqxo1FTTBjj/ADU5Z9lklD7VqNxa3EsJqIdnSUUrJm+fu5Aw/UrVCiD0Lh3F/CmKljKXFKdsrrfqakmnmudmtmAufIld8SAL/JeXDnrn5rucL4n4lwcsFDiM7Ymn/wBXncZ6Yg6j3clwPSyD0ULnM/JQuzsNfsta4R7UqWXkhxujNM45GqouaWEXOr4XH3gHkXLYFBiGGYjA2pw+rgqYHWu+B4dY2vZ41B7EBUfXoMyoCXZ7bd1M35/l6dVSbWtqdAgpNrdToEF99VALZnU/RQkuNh4dz17ILckm2g3VJAFymTR0CgBJ5neg6IKLnM5dlC43sMz9kJN7DXc9FQA0fcoGgzUBLs9Bt3Uzcf3Rp3VJt5nQILdEAIzOZOqIIQTloN0JDR22CpIGq4gX+J2uw6IABJ5j6DoqSSeVuu56KEknlbrueioAaPuUABrR9SVAC7Xw/dLc+Z8O3dVzrZDM7BAJtYDU6BUC2ZzJ1KgFszmdyoTzZDTQn+yATzEgaDU9ewXGeempYZZ6iWOGnhaXySzPayNjRu5zsl0PEXFuC8ORlkzvf1zm3hoYHD3pBGTpTo1vc+gNlpjHuJcc4hl56+e0DHc0FJDdlNF0IZue5ufIZIM84g9psEZkp+H4hNJm011U0iFuovBCbOPm6w7Fa0r8RxLFKg1WI1c9VOb2fM64YDnyxtHwgdgAvkRQNVdEX24bhGN4y/3eF4fUVdjZ0kbeWnYf3532jHzQfCFCQBckAdSQAtmYX7KqqQMkxrEhCDYmmw1oe+3R1RMLX8mHzWZ4bwVwdhxY6nwqCWVtr1Fbeql5huDNdoPk0INFUlBide4NoKGtqyTYfhaeWRvq4Dl+q76m4C45qbO/RjKdhy5q2pgiP+BrnO+i30BHEwNa0NY0Wa1oDWjsAMkAJPMfQdFRp2D2V8TPAM+IYVD2Z+ImPz5Whfaz2TVRykx+MO3EVCSPUulW1iT4W67noqAGj7lBq3/ejGp4ik/+XR//ALl+TvZNU8pMOPRuO3vaEtH+SUraubzc+Ead1XOtYAZnQINOT+yviSP/AEGI4VMc/heKiEn15XBdTU8Acc0vMf0YyoYPzUdTDIT5NeWu+i3yG2uTqVLlxsNNz18kHmirw/FKAltfQVtKRcXqaeWNuXR5HL9V8gs4XBBHUEW+a9RuDOUtcAWnLlIBB7WKx7EODOEcU531OFU8cz7/AK6jvSzAncmEgE+YKDz8gC2ZinsrmaXvwbEhJa5FNiLQ0+TZ4Rb5sWCYpguOYM/kxSgnphflbK4c1O8/uzsuz637KDrtV9VDX4hhlQ2qw+qnpqhv/GQOLSR+y8aEdiCvl0RBtTh/2nRv93TcQxNjdk0V9Kx3uznrPC25Hctv5BbJpZ6WqhiqaaeKeGZvNFLC9r43t/dc02XmJdxgfEeN8Pze8w+c+5e4OnpZrvpZuvMy+R7ix+yD0SbvNhpuevZcrho7DRY1w1xhgvEUYjiIpsRY28tDK4GSw1dC78zfIX6gb5GAT8TvQdFRQCfid6DohJOQ13PRCTflGu56KgBo+5QAA0fUlcc3/wAI+qZu/h27qkgeZ0CCk28zoFALZnN256IBbM+I6lQkuyGm5QUG5sNBuiosLBEC2d1C4k8rddz0R19G69eiABo+6CgBo+pJXEXdr4enVLcxufDsOqrnWsBmToEFJtYDXYKAWzJuTqUAtmc3HUqE81wPDuUA3cbDTc9ewWveLvaBDhxmwvAnxy1zeaOpq7B8NIdC2IaOkG+w7nIdZxrx2ZjPg2AzkQDmjra6F1jLsYaZw/L+07fQZZu1nlYAbKD9Jpp6iWaeeWSWeZ5klllcXySPcblznOzK/NEzJY0Bxc9zWMa0FznOcbBrWjMkoC7LCMExrHZzT4VSPnLSBNMfgpoP+lmd8IPbM9lmnDHs2qKsRVvEYkp6d3xR4cx3LUSNNiPxL25tB/ZGfUjRbWpqajoIIaWjp4oIIm8sUMDAxjR2DfqgwTBPZng1CI58Zk/SdVkRDZ0dDG7+C/M7+Y2/dWfQQQ08bIoY44o2ANZHExrI2Do1rQAPkuYFszqfooSXGw03PXsFQ8VwPDuf6Bcrho7KEtaOwUAJPMf5R0QACTzO9B0VJPhbrueiEm/K3Xc9FQA0fUlBAA0fcqZvNz4dh1TN+Z8I0HVVzrWAFzsEBxAyGuwRrbZk3O6Nba5Op1UJL8hoNT17IBJcbDJo1PXsFyJa0dgnwtHYLiAT8TvQdEAAk8zvQdFXE5tbr9kLjflbrvbYIAGg/MkoKAGj+6/KSKOpY+OaNkkDwWujka17HtOoc1wtb0XPN+Z8I07qkgWG+gCDAsd9mmCVvPNhD/0bVG5ETQZKKQ94r3b/ACn0K1bjGBY3gMwhxOldEHOLYZmH3lNN/wBHKBa/Y2PZejwLXJ13X4VNNS1sMtLUwRT00jS2WOZjXxvB25XZIPMuii2VxP7NpYBLXcO880Wb34dI7mlYNT+Fkcbu/hJv0J0Wt3Nc1z2Oa5r2OLHte0tcxwyLXNdmCFBY5JYZIpoZHxzRPbJFJE4tkjeDcOa5uYK2xwj7QWVnuMMx2RkVWSI6auNmQ1B2ZONGvOx0PY+LUiZEEGxGljog9RABo+908X8PTqtScF8dvpTT4RjsznUnwxUVbK67qfQNiqHHMs/Zdtvlm3bfO2zS2x5h8NswR1BVFJt5nQKNFrk+I6nogbbM5uO6hJcbDTcoBJcbDTcq5NHb7pk0dkAJPM70HRAFzmfQdAit87fNEA5LiBza+HbuqRc56D6o51sgLk6BBSbWA1OgUDbZnNx1KoFrk5k6lcSebIeHc/0CASXGw0Gp69gtV8ecamU1GAYPLaFvNDidXG7OU6OpoXD8uzzvppfm7X2gcXHDIn4JhkpbiFRGPxk0Z+KjgeLhrSNJHj5A31cCNO5AADQKB2HlkiL7cMwzEcZroMOw6ISVMt3EvJbFDEPFNM4DJo/1C5NkH5UVFX4lVwUFBA+oq5yeSNlhYDV73HING5K3VwnwPh/D4ZV1JZV4s5p5qgt/VU99WUrXZjoXansDZdhwxwvhvDlH7qn/AFtVNyurayRoEtS8bAbMH5W/cm6yFxt57BUQkC1tdgjRucz9kDbZnVQ3cbDw7nr2CBcuuBkBqevkuRs0dANEJa0dhooASeY+g6BBACTd3mB0VJPhbrueiEm/K3XfsqAGj+qCABo+pKmbzc+HYdUzfmb8uw6ql1rAZk2sAgONshmdgjW2zJuV8Fdi+CYUObEsQpKZxFw2eVgkI/dZfmPoFjtT7SODISWxz1tSBvTUsgDvIzciDMM3EgZAanr5Ll8LR2CwD/fU4YBDW0GLkdfd0o//ADr94faZwdK5vvf0jBfK81NzMb5mFzvsgzYAk8zvQdFXE+Fuu56LqaHiXhrFC1mH4rRyyONhGZPdTHyim5X/AEXbABoP1JQUANH3K45vNzk3bugBfmb8o0HVcibWG50CATbIDM6BQC2Z8R1QNtmcydVLl9wNBqf6IBu/IeHc9fJcjytG1k+Fo7KAEm7vQdEAC/xO12HRYnxVwVhnEQdUQ8lLizWWbUtb+rmtoyqa3MjodR3GRywkn4W67noqAGj7lB5mxDD8Qwurmoa+B0FVCfiY6xDmnR8bhkWnYj/UPm0XoXiLhvDeJaQwVI93PGHGjq2NBlgeRbfVp/M069iLjRGLYRiWCV02H4hHyTR/Ex7bmKeIk8ssTjq0/TQ5hQfB5+S2RwHxp+FfTYHi8pNK8thw6rldc07jk2nlcfyHRh200Pw63TIggi4IsboPUJJceUaDUq/C0dui117PeLzWRswLFJia2Bn/AKPnkPxVUDR/oXE/nYNOo7jPYoBJ5neg6KgASeZ3oOiEnQa/ZCc+Vuv2VADR9yUAADz3KKC5z22RBSbaZk6KAWzObjqVcsyuJPMbDw7nr2QLl2Q8O569gui4q4hg4cwuSpHK6sm5oMPhP55+XxuGvKzV3oNXLvJJIYIpZZXtjhhjfLI9xs1jGNLnOJ6Aarz5xTxBNxFi09Z8TaSK9PQRnLkp2m4cR+07xO87flQdNPPUVM09RUSPlnnkfLNI83dJI83c4lfmiX6BxJsAGi7nEmwAA3Kg+iioq7EaumoKGIy1dS/3cMYyHUvedmtGbit9cLcMUPDdCII7S1c/K+vqyLPqJRoBuGN0YPXUrrOBOEhgVH+NrYx+mK+Npn5szSwE8zaZvfd/fL8qzMuAtlnsFQJtkNdggG51P0QC2ZzKl+bIaDU9fJAJ5shpuevYLkbNHYIS1o7bLiASeZ3oOgQACfid6DoqSfC3Xc9ELjezddz0VADR9ygABo+645vNz4dh1Tx5nw7Dquj4o4louGqH38gEtZPzMoaa9jK8AXc4jRjcuY+mpQfXjWPYPgFMKnEqjkDrthhjAfPO4C5bFHfPucgNyLrUeOe0PiLEzJFQOOG0ZuAKd16qQafHPqP5QPMrF8SxLEMXrJq6vndNUSnMnJrG7Rxt0DRsP7r41BXOe9z5Huc6RxJc97i57idS5zs1ERBUCKaoGp+3byWS4LxrxNgpjjZUurKRtgaSuc6Rgb0jkPxt7Z27HRY0iD0Bw7xfg3EUfJTuMFexvNLQzlvvQBq6Jwyc3uPUBZEBbM5k69l5gimnp5YZ4JZIp4HiSGWJxZJG8ZhzXDNbq4L4xHEERoK8sjxenj53FtmtrIW5GWMaBwy5x6jI2aGaG7jYeHc/2XK4aOg7JdrQNgoATm4Z7DoqABPxO12HRCSTYa7nohJOTdd+yoAaPuUAANH3K4+LP8uw6p48z4Rp3XIkCwGZOgQQm21zsF0fEnDdDxHQOpqizKqLmkoqoNBfTykfMtOjh/UXHeNFszmTr2UJ5rgablB5oxCgrsMrKmgroTFVUz+WRmoIIu17Du0jMFfKt6cbcKx4/Qiopmtbi1CxxpTp+Ij8TqZ576sOx7OK0YQWktIc1zSWua4EODgbEEHO43UHKOSaGSKaCR0U0MjJYZIzZ8cjTcOaeq37wlxLHxHhccx5W4hT8sOIxDINktlKwfsvtceo2WgF3HDWPT8PYtTYgzmdTn9RXwtP+lpnEc1h+03xN8u6D0SAGjXzJUzcf3fuuEM0NXFBUQvbJTzRslhkYbtkY8czXDsV+hIaLbnQKi5CwRRotmfEdf8AUiAbnLQbn+iEho7aAKkgDNfhUzwUlPU1tU/khpoZJ5XHRscbS8lBr72mY+6mpIcCp32nr2tnri05x0jXfDFlu8jPs395akX34tiVTjGJYhidQSJKuYyBl7+7jHwxxjs0AD/+r4NVAWwvZvwyK+q/T1bHekoZSzDmPB5ZqxnimsdRHo3v/AsLwnDKrGcSoMLpbiWrlDHPAJEMTfiklNv2Rc+duq9F0NHSYZR0dBSMDKelhZBAwZnlaLXcep1J7oPpJt3J0CAWzOp17IG2uTqfop4sh4dz17BUD8eQ8O5/oFyJDR2CXDR06ALiASeZ3oOiAASeZ2uw6Kknwt13PRCSTyt13PRUANH3ugABo+645vNz4du6ePM+HYdVXEDIanQIPzqaiCkgnqZ3hkFPFJPM86MjjaXOd6LzvxBjdVxBilViMxcI3H3dJE43EFM0nkYLZX3d3JW0PabiT6PBKegY60uLVPJKQczT04ErwPM8gPmtMoCIigK9yomqAiIgIiuiB3K/akqquhqqWspJDFU0srJoJB+V7ToR0OhHQr8Eug9G4Bi9Pj2F0OKRANMrOWaIG/uKhnwyRnyOnay7Ukk2Gu56LUnsrxOSOsxbB3O/V1MIr6cE+GWItilt5gtP8q24AGj6kqgAGj7lcfF/DsOqeLM+HbuuRdbuToEAm1up0CgFszm46lGi1yc3HXsoSXGw03KASXGw03K5ZNHb7qZNHQD6oASeZ3oOiAASbu9B0C1L7SeGhTT/AO6Cjj/UVL2sxNjBlHUOyZPls/R3e37S204nwjU/RfhV0dLW0lVR1TBJT1MMkM7T+ZjxYkd9wg8yqXsuxxrCqnBMTrsNnJc6nk/VSEWE0Ds45BbqLX7+S65QbX9mPEBlgn4eqX3lpWuqcN5jm6ncf1kI/gJuOzv3VstrbXJzcde3kvNGG4jVYTX0OJUp/XUUzZmtGkjM2vjPZwJb6r0dR1cGIUlHWUruanq4IqiN/VkjQ4D+6o+q9zYaDVEAAFgiBbO59Fr72n4waXC6TCIn2lxOT3lQBqKWAh1j/E7l/wAJWwHE6DU79FoDjTFDi3EeKStdzQUsn6PprG493TEsJB7u5j6oMczKqL6KChnxOuw/DoL+9rqmKmaR+QPPxP8A5Rc+ig2j7L8EFPR1OPzs/X4iXU1DcZso4nWc8b/G4fJo6rZABGZ13X40lJT0VNS0lO0MgpoIqeFo0bHG0MA+i/XxXA8O569gqB+I2Gm569guRIaOw0S4aPsuIBJ5neg6IABJ5neg6Kknwt13PRCbktbrueioAaPugABo+645vzPhGg6pm83Ph2HVUkDIa7BAcbAADM6BA21ydTqjW2zOZ3KhJcSBk0anr2Qai9q0znYtgsN7sjw18rRtzSzFpP8AlC12th+1aO2L4K8DJ2GPYP5J3H+q14oCvmoiBqiIgIiuiB3U1REBERBkvAkzoeLeHyCQJX1UDrbtfTSZH1APot+C7sz4du60FwLH7zi7h1v7ElXKfJlLKf7Lf5NrdToFQJtlbM6BQNtmfEdSgFszm46nooSXZDTcoBJdkNNyrk0dvurk0dvuoASeZ3oOiAASeZ3oOiEm/KNfsjidG6/ZUANB+pQAA0fcrjm7+H7p48/y9OqriGgAZk6BBr72m4G2rw6DGYW/8Iwy0VTYZvo5HWuf4HG/k49Fp5enZqaGpgqKeoaJIqmKSCZp0dHI0tc1eb8Vw+XCcSxLDpTd9FUyQBxFueMG7H2P7TbH1UHx6Lbfsuxn31BX4LM/48PeKmlB1NLOTzNH8Lr/AOILUa73hHFP0RxFg9U53LBLMKGqubD3FSRHc/wnld6IPQoucz6Doit87fNFR1mP4gMJwXGcRBs+mpJXQnLOdw5Ixn+8QvOGe5uTmSdSTndbi9qdaYcFw+ha4h1fXBzwPzRUzOcgj+IsWnFAWwvZbhf4jFcRxaRt48OpxS05Iy/EVObnDyaLfzLXuW+i3p7PMPNFwvhpLeWTEHS4lMdz782jH+ENQZabuNh4dz17BcjZo7DQISGjp0XEAk8zvMDoqAaSeY+g6Kkm/K3Xc9EJN7N13PRUANH9UAANB+q42Lzc+EaDqmbzc+HYdVS62Q12CA42sBmToEa21ydTqgbbMm5UuXGwyG56+SBm/IeEanr2XI8rR2QlrR2Gi4gEnmd6Dog1f7WITbhqptqa+B56f6J7R91q9bQ9peMYBXUtPh1NWxzYlQYiHzRRNe5rGmJ7HtdKByXBtcXv8lq43UDVERARFdEDRREQEREBNFdFPNBmXs1iMnFMLwL/AIfDq6XyLuSIfcreAbbM5uOpWkfZ5i2B4NieJ1WKVbKb39HDSUznskc0l0vvHlzmNIAFm5nr2W7A4SBpjcCxwDg9pu1zSLgtIysqKbuyGm5VyaO33TJo7IASbu9B0QACfid6DohOfKNfsjidG6/ZUANH1JKAAG/ckrjm4/uj6p4j+6NO6pIbYWuToAgOIbkMzsEa22Zzcfp2QNtmc3H/AGsoSXGzTluf7IFy7Iablal9qeFCGuwvFo2gNrIjR1BA1mg+KNzj3aSP5Vtv4WjsPqsX46w92I8MYt8JMtG1mIwgbGnu5/8AlLkGhUtcOF7XBtbW/YonkoPRfDGI/pbAMErybyzUkTajr7+Ie6kv6gosS9lNaZcMxbD3OuaKubPGCdI6pnNYDpzNd80VHQ+1Oq97jWG0gJLaPDw9w2bJUSOJ+jWrX6yXjqo/E8V4+69xFLBTN7e5gjYR87rGlByZDJO+KnjF5KiWKnjHV8rxGPuvTdNDFR0tLTRi0dNBDTxgZfDGwMGXovPvCVMKzifhqBwu0V7alw/dpmOqP6BehgCTzO11A6KigEnmPoOgQk35W67nohJ8Lddz0VADQgABo+pXHN5uQeXYdUzebnwjQdVXOtkNdkAuAsALnYBGttmdTqUDbZk3JUJLiQPDuf6BAN3mw8I1PXyXIlrR0AQlrR20C4gEnmd6DogAE/E7XYbBdTxPib8JwHGq+I2mgpiyA7tmmcIWOHkTf0Xbkk/C3Xc7BYX7SiWcLytF/wBZiFCx3cBxf/RBpI3NySSScyTck6kkqIigIhVQNFNURAREQFdE0UQVREQFuv2aYm+s4eNNM8ufhVVJRtJN3GBwE0Q9AS0eXZaUWz/ZK79ZxRFsRhs3YG0zEG0wL/E70HRCc+Vuv2Qk6N137KgBo17klUAA0fclcfGf3Rombs/yj6qkhtgBmcgAgEhuQGZyACNaRcnNx3RrbZnNx1/1KElxIBy3P9kAkuyGm5V+Fo0yCZNHZACTzO9B0QACTzO9B0XCeOOeKaneLsmikhkG3K9paQfmuZJvyt137IAGj6k9UHmKpp5KWpq6WQWfTVE9O8bh0TzGb/Jfnosh41phScU8QxjISVLaptulTG2Y/UlY6oM79l9X7niKqpifhrsMkAHWSnkbID8i5F0fBtR+G4q4bkvYOq3U7vKaGSOx9SEVHUVtRJV1dZVSG755XSOzvme6+fVU5k+ankoMy9m0LZeK6d5FzTYfXzNP7x5If/MVvAk35W67notN+ytnNj2KvtmzCLA9OeoZf7LcoAaPuqAAaPuuOb8z4dh180zebnwjTuq51shmTkEAutYDU6AI1tszqdSUAtcnU6qXLzYeG+ZQCS82B+Hc/wBlyJDR22QkNC4gEnmd6DogAEnmd6DoqSb8rdd+yjnE/C3U6noqAGj6koAAaNfMrHuMcMmxjh3FaaFpdPG1lXTNGr5Kc+85QOpFwPNZALvzOTRoOqpIGmuwQeXdRfrml1szi/2fYg6qmxLAIWzRVD3S1NC0sjkildm59PzkNLTqW3y2uMhrqqpKuhqJqSshdBUwODZYnlpcxxaHAEtJGhB1UH46KIiAiIgK6Jp5qIHdERARFQCSGtBLnOa1oGrnOIaAPNBFuH2XYZNS4TXYnI0tdi9Q0wA3H/BaYOja+x/aJeR2sd1imA+zvH8Qq2fpinfQYdG4Ona97DU1AH/FxNjJsDu4nyut1QwwU0MMELGxwwxsiiYwWayNgDWtaOgCDmAGj7lcc36+Hbumb/4fuq5wbbqdAqBPLkNToEaLXJN3HX+wRrbXJzcdf9ShJcS0abn+iASX5Am18z/ZX4Wjt90uGgdFACTzO12HRBQCTzO9B0Rzj4W6n6I5xvyt137IAGj7nqgABoOfckqZv18P3TN5ucmjTuq53La2p0CDSntOgbFxK2Qf+84ZSSu82vli+wCwhbE9qzCMVwR51fhsrT/JOT/Va7UH70kzqaqpKhhPPBMyVhGoc3RF+I1HYogiKnV3mog2F7KSP0zjhO2Fw/8A3C2/4yCfDsOq037LHBuP4lGT/pcJcQOvu6iM/wBVuVxtYDU6BUHOAyGp0CNbbM5k6lA21ydTqpm/IeHc/wBEAkvNh4RqevZciWtA+gQ2aO2wUAJPM70HRBACTzO9B0VJN+Vuts+yhJJ5W67noqA1oPzKAAGj7lTN+Z8Ow6oBz5nw7DqqTawGZ2CCk2yGuwUAtmcydSgbbM6lS5cbDwjU9UC/PcDw7nr5LSPtJozT8TzTctm19HSVItoXMBp3evwhbwyaOgC1x7UsNfNh2GYqxnxUU7qaewzEFTblJ7BwA/mQajKIigK6eaaeaiAiIgIiIKuz4doziGPcPUgF2y4lTOkH/NQu9+/6NK6y31Wfey7DDU4zXYq9v6nDKUwROOn4mqyyPZoN/wCIINyAAAnrmSuPj1yH3QXd/Dt3VJDbAanQKg53KLDU6BALXJzcdeyNbbM5uOqhJdcDTc/2QCeY2Gm5/sr8LR9u6ZNHZQAk8zvQdEAAk8zvQdFXOz5W67nojib8rdevRAA0a+Z6oAAaD8ySpm83PhG3VM3m/wCXbuq48tgMydAgFwbkBnsEa22ZzcUa22Z8R+ihJcSBpuf6BBqX2rkfpHh//wCBq/8A6zFrjVbD9qrgcYwWIfkwx7/8c7h/5Vr1QEQajzRB9eKUbqDEsRona0tQ+E31BaAvjWU8f0/4bivGbD4agUtU3v7yBgJ+YcsWQZd7OZ/c8WULf+U0VfT+vIJh/wCFb0AtmddyvOnDVUKLiLhypJsxmJU8bze1mTkwOv8A4s16KN3EtGgNievZUCS42GTRqevZciQ0dhoEJDR22AXEAn4na7DogAEnmd6DoqSb8rbX3PRCTflbrvbYIAGg/MlAADR9yVM3m58Ow6+aWLzc35Rp3XIm1gNTkAgE2yGuwUAtmddygba5Ou5UuXEgeEanr5IBu/IeHc9VyJDR2CZNHYaKAEnmdrsOiAASQ52uw6L5MSoabFKGuw6obeGrgfDId2XGTx3abEeS+skk2Gu56KgBo+5QeZ8Rw+swuurcOq2ltRSSuifkbPGrZG3/ACuFiPNfLotwe0zCMPmwoY2WFldRyU9O17LD38EsgbySjte7Tt6rTygIiICIiAr5+id1NUFs9xa1jXPe9zWRsYCXPe48rWtAzuTkF6B4QwH9AYJR0cgb+LkLquvcLfFVS2Lm3GzRZo8u6wD2X4Ph9bW4lilS0yTYU+nZRsdb3bJJmPcZiN3C1m9NddNvuPLkBcnQIDnctgMzsEDbZnMnU9Ea22Zzcfp2UuXXA03P9AqBJcbDTcq5NH+2ZTJo7BACTzO9B0QACTzO9B0QuN+Vuu/ZCTflbr16IAGj7koAAaD8ySoLvNz4R9UsXm/5b/NVzuXLU7BAJDcgM9gjW2zObijW2zObioSXGw0Gp/sgElxs3Qan+gVuGDsNFfhaOgXEAk8zvQdEGkvaVOZuJ5I/+TYfRQ+XMHz/APmWFrvOLar8ZxLxFODzNFdJTtN7/DTgU4t2+FdGoPqw+nNZiGG0jQSaqqigFtfiRd1wNTfiuK+H2Wu2GWoq35aCGB5H1LUQZF7VqP3eJYLXAWbU0UtM42/PTyB4ufJ/0Wulur2m0BquHhVtbd+G1sNQT0hlvA/7tPotKIBLm/EzxsIezs9h5h9QvTGHVsddh2G17D8FZSU9S3/rYw+y8zjVbs9mle2s4ebSOdeXCqmWktuIX/r4ifQkfyqjNQCTzO12HRUkm7W67nohJvyjXfsgAaD8yUAANH3Kgu83Ph27pYvNz4RoOq5E2sBqdAghIGQ1OgQC2Z1OpQC1ydTqpcvuB4RqeqAbvyHh3PXyXIkNHZCQ0dtlACTzO12HRAAJIc7XYdEJubN13PRCSfhGu56KgBo+6AAGj7lcfFmcm7Dqmbsz4dh1VJtYDU6BBh/tJIHC1UOtZQj/AL260at3+0ocvC1Rc3Lq6hv/AIytIKAiIgKoogIiINpeyV1mcUi2fvsOI/7OQLaAbbM5uO/9Fq72SH/2pHR2Gn/LMtoEl+QvbcoBJcbA5bn+yvwtHYIS1o7BACTzO9B0VAAn4neg6ITnyt137I5x8Ldd+wQANH3JQAA0fUnqp4z+6NO6C78zfl27qlwblqdgEBxAAAGegCNba5ObijW2zObjqoSXEtGm5QCeY2Gn5j/ZX4Wj7d0+FgUAJs53oOiCgEm7vQdF+FbVx0VJXVb7clJTVFTJf9mKMv8A6L93ON+Vuu/ZYd7RcQbQcNT07T+uxSaKib+17u/vZT8m2/mQaQfI+V8kshu+V75Xnq57i4/dcUSyg2B7K6T3uN4rWkXbRYe2FvaWqlBv8mH5osm9ltB7jAaqvcLPxOulew55wU49wz6h/wA0VGY4nRR4lh+I4fIByVlLPTkkZNL2ENcPI2PovNUkcsMksMrS2WGR8MrTq2SNxY4H1C9QkgC60X7QsK/RvEVROxnLBirBXx9BKfhmbfrzfF/MgxBZt7NsUNDj5onuDYcXgNOLnIVMN5Yj6jmHqFhXdc4Zp6eenqad3LUU00dRA79mWNwe0/PVQengA0fcqC78zk3YdV8OE4jBjOG4diUJ/VVcDJeX9iTwvYe7SCPRdgTbIanQKiE2yGp0CAWzOp1QC1ycyVCefIZN3PXyQDd5sPDuevkuRIaPsAhIaOygBPxOGew6IABJDna7DohJJs3Xc9EJJPKNdz0VADR9ygABo+5XHxZnw7DqnisT4dh1XXYrj2A4KwuxKuggdy3ZFcvnf05IWXefkg7IutoMzoF89XWUGHQvqq+qgp4W+KWd7WNva/K3m1PQBawxj2o1L/eRYFRiEG4FXXgPlt1jgaeQerj5LX1diOJYnOanEKueqmzs6d5dyg52Y3wgdgAoM64343wvG6N2EYbDNJCKiKZ9ZN+ra4xEkCKI/EQept5brXaIgK+aKaoF0REBEV0QZZwVxTS8Mz4g2rppZabEPw/vZICPewGHnAIY7Ig82eYOXz3LheNYLjEHvsMrIahgF3sYbSx9pInWePULzav1gqKmlmjqKaaWCeM3ZLA90crT2cwgoPTgF/idrsOgVJN+Vuu/Zacwb2m45RhkWLQsxCAWb71nLDVtGmZA9271APdbGwXizhjGuVlHWtbUuzNNV/qai/QNdkf5SVR3oAaPqSpm83OTRp3Sxcc8gNuqpcBkNToAgONrW1OgRotcnxHVGttmc3HVQkuJA03P9kAkuNhpuf6BW7Wj7JkwdlACTzH0HRAAJPM70HRC78rdd+yrnG/K3X7IAGj7koAAaD8yd1pj2mYt+MxuHDo3XhwmANeAbg1U4Ej/AJDkHzW2sTxCDDKCvxKoNoKKB8xGhe5vhYO7jYDzXnCpqJ6ypqquodzT1U8tRM7rJI4vdb55KD8VbSP5Y42l0kjmxxtAuXSPPK0D1QrKOA8J/SvEuHl7eanwwHEp7jLmiIbC3PLNxB/lQbqwagZheF4VhsduWhpIKdzv2pGt+N3qbn1RdhkLBFQsL3PosM9omEfpPAn1MLOaqwhxrGAC5dARyzNHpZ38qzI30Gv2ULGFjmPDXMcC14cAQ4EWIIOWaDy9rZNF3fFGCuwHGa6hDT+Gc78TQuN/ipZCSwXP7ObT/D3XSKDZXsvx0QzVmATv+GoL6zDuY5CUD9dEPMAOHkVtgC2Z1Oq8xU9TU0dRTVdNIY6ilmjqIHj8skZuL9tj2K9EYDjNPxBhdHiMFmiVvJUx3zhqGZSRHy27EHdB2ly42Hh3PXsuRIaEJDR22UAJPM7XYdFQAJPM7XYdEJJPK3XfsuvxXG8FwaL3mJV0FNcXax7uaZ4z/wBHEy7z8lr3FvakQHxYHQWvcfisR1PdkEbvld/og2i50cTHPe9rI2Aue97g1rQNSXOyWIYv7QuFMOL44Z3YjUNuBFQWdFzD9uod8FvIlagxTHcexh3NiVfUVAvzNic7kp2H92FlmD5LrFBmeL+0XinEueOlezDKY3HLRkuqC2/5qhw5r/whqw6R8kr3ySPe+R5Lnvkc5z3E7uc65PzXFEBERAV8081NUBERARFdEDRRO6ICIiArpbqDcHceSaeaiDJ8H444rwfkjZV/i6Vth+HxDmmAAysyS/vB2+K3ZbAwj2l8OVnKzEo5cNqHWBfJealJ7SsHMPVo81phMwg9OQVNNWxtmpJ4Z6d/hlp5GSMd2DmEhftdrR2XmihxHE8Ml9/h9ZU0su5p5HNDh0e0fCfUFZ1hPtQxKAsjxmkjrIxkailDYKgdzGf1Z9OVBtwAk8ztdh0CE/lbr9l02E8U8O441rcPrYzUOGdNP+pqW/8AVv19CV3QDWg/UlUAA0fUlTx6+EfVM3H937rr8cxekwLC63EqixEDLQx3AM07vhjib5nXoLnZBr32oY4HOpOH6d+UZZWYjY/mteGI/wDjPm1ax7L9qurqa+qqqyqfz1FVNJPM7q95ubDoNAOgX4KBkLk6DM9u63V7NsH/AEdgTsRnZy1OMyNqsxZzaVg5IGnzzd/MtVcPYPJj2MYfhoDvcyP99Wvb/wAXRxEOkNx1yaO7l6LjjYxkbGtDI42NZGxos1jGiwAHZBybc5n0CK3zsPVFQyFz81xA58z4RoOqpbfXTohNshrsEGHe0Hh84zhP4qmZzYhhYknhDRd81OQDLF10Ac3u3utHXBzGh0XqIC2Z8W5WjuPOGxguJOraVlsLxKR8kXKPhp6k3fJBkLAauZ2uPyqDD+6yvgfib/c/ifu6l5GF4g5kdXfw08o+FlSB20f2z/KsTRB6TxHFcKwmlNfiNVFDTgfqyTzGQkXDYmt+JxO1gVq3HvaZitYZIMFjNBTHmb+IlDX1sg0uBmxn1PcbYNUVldVilbVVM8zaSBlNSiZ7niGFmQYwHQf7bL50HOaaeolknnlllnkJdJLM90kjyd3PeST81x080081EBERAREQFe6f7BTVA1REQERXRA0UREBERAV0TRRAREQERXsEBREQW5BBBIc03aQSCD1BGazHA/aDxDhfu4a1xxOibYclS+1Sxv8Azc9iTbo4H0WGog9F4JxJgmPwGbDqgGRjQZ6aYCOop9v1jDt3Fx3Wo+OuJv09iIpqSQuwvD3vZARk2on8L58tvys7Z/mWKRTTwuL4JZInlj4nOie5jjHIOVzCWkGxGRC/PJAS4AJOQAufJFlfA3DZ4gxUS1Md8Kw18c1XzN+GomFnR04JysfE/sLfmQbA9nPDpwrCnYlVRltfiwjm5XD4oaQZxRkHQm/M7zH7Kzck35W679ghP5W6/QKgBo+56qgAB/U9UUBvntt3RBSbbXJ0CjRbM6nUq5XJXE3ebDw7nr5IFy42HhGp6+S+HGMKoMZw6qw2sb+pnZZrgBzxSDNksf7zTn9N12BIaO3QKAEnmdrsOiDzXi2F12DV9Vhtazlnp3WDgPgmjObJY/3XD5ZjUL4VvvjHheDiSiHuWsbilGHPopjYBwObqeR37Ltuhset9ETQz0801PURPiqIJHRTRSDlfHI02LXBQfmromiIIiIgIiICvdFEDVERARFdEDRREQEREBXRFEBERARFfJAUREBLIn2QAqiIIiLkxksskUMMb5JppGRQxxtLpJJHmzWMaMySg+nDcOrsWrqTDqGPnqap/I0nwRsGb5ZDs1ozPy3XoTBMHosCw2kwuiF2wtJllcBzzTOzfNJbdx+WQ2XS8F8KM4co3SVAY/GK1rXVkgs5sDNW08R6D8x3OegFsuADR9yVQADR9yd1x8f8P3TN2Z8P3VJA89ggvZFGgjM6lEA3OW26pLWjtoEJAGa4gEnmdrsOiCgEm7tdh0Qkk8rfU9EJJNm67noqAGj7lAADR91g3G3BzccidieHMazF4I7FuTRXRNGTHnTnH5D6HLNub5uNz4dh1VcQMrXOwQeX3Mex8kcjXskje5kjJGlr2PabFrgc7jdcbrdnGPA8WONfiGHCOHGGN+MGzYq5rRkyQ7P2a70OWbdLzwVFNNNT1MT4aiB5jmhlaWyRvGocCoPzREQFU81LoCIiAiK6IGiiIgIieSAromnmogIiICaor5ICiIgIiWQFeyeSiAiZlc4opp5YaenikmqJniOGKFpfJI86Na0Z3QcPiLmMY1z3vc1kbGNLnve42a1jRmSdluPgbgo4M1mLYoxrsZlYRDEbOZh0Txm0be8I8R20G5dy4M4GZgxjxPFWxy4y5t4oxZ8OHNcMww6GQ/mdtoOrs9ADR9yd0FADR9SVx8ef5du6ZuzPh27qk289gqKXW89goAdTqfogG51+yhJdkNNz/QIOV7nLQalEAAAARAtnf5KEk/CNdz0RxOg1P0VADR9ygABo+5XHxZnwjQdVc3G58I0HXzQm2QzJ0CCuNrAZk6BQC1ycydSgFrk5k6lTNxsNNygEl2Q03Kxring/C+I4feOIpsSiZy01YxtybaRztHib9Rt0OTZNHb7oASbu12HRB5txbB8VwOrdRYlTmKXMxPHxQzsGXPDJaxH1G4XXr0pimF4ZjFNJQ4hTR1ED87PydG7Z8b2/EHDYg/dah4l9n2MYR72qw33mIYcLuIY29ZTt1/WRt8QHVvqBqYMJRMjoQdRl1GyICIrogaKIiAiIgK6Jp5qICIiAiK+SAoiICIgCAFVEQEUJa0EuNgBmSs04c9n+M417uprxLhuGOs4OkbasqG/8zG7wg/tOHkCgxnC8KxXGqttDhlO6ec8pkObYoGE295NJoG/U7ardfC3BuG8Ns99dtVi8rLT1j22EbTrHTtPhb13O/Qd1heE4VgtKyhwulZBEM3lty+R275Xn4nO7k/2XYgBo+5VAANH1JXHxfw/dM3a+HbuqTbz2CClwHnsFGjc6/ZANzqfooTzZDTc/0CCk8xsNNz/ZPhaOwVyaOgCgBcQXeg6IAuczl0CK3zt80QMhc/NcfEbnwjQdVSLnPQbdUJtYDU6BALrWAzJ0CAWuTmTqUDbZnNx1Khu7IablAJLjYablW4aO23dU2aO33UAJPM7XYdEAAk8ztdh0Qk+Ea7nohJvyjXc9FQA0fcoIAGg/U9VM3EHQDRM3H90fVVzrZDU6BBifEPAvD2Nl87GfgcSfcippGtAkd1nhya7zyPdaqxzg/iXAed9TSmoo25isoQ6WG3WRoHO31Fu69AtbbM5uOv8AqUN33aNNHHr2QeXgQRcEG+hBuPmE7rfONcB8KYsZJjTGiq35/iMP5Yi53WSK3uz/AIb91r7FPZpxPRcz8PfBiUIueWMiCqA7xynkPo/0UGDov2qqWsoJTDX01RSSj8lVE+J3pzgA+hX4oCuiaKICIiAmqKoHZREQEREDVF+tLT1ddJ7ihpqirmNrR0kT5nZ5Z8gIHqsxwr2a8U15a+uNPhkB198RPU27RRHlB83oMJJDRdxAHUkALvcE4T4kx7kkpKUw0brE1tcHRU9usYI53eg9QttYPwDwpg5ZM+ndX1bbET4jyy8ruscNhEO3wk91lTW6Ei1hZoGgHkgxLh3gHAMEMVTO39IYi2xFRVMbyRO6wQZtb5m57rLiT4RrueiEm/K3XfsFQA0fUkqgAGj7nquObjc+EfVM36+Hp1XIm3mdAghNvPYIBnc6/ZA06nU/RQkuyGm5/sgXLjyjQeI/0XLJo6BMmjsFAC74neg6IIASeZ3oFS7Ow137ISdG679kADR9z1QUANH3RQEuz227og5ZqAWudzuiIBBOWyAWFgiIJy53Oo07Km+yIgAAaIRc56dERBfJQC2e53REAgnK/mgAAsERBOW5ufQdFyN9kRB+M1NS1MZhqYYp4neKOdjZGHza8ELGK72ecF1pc5tA6jkP58PlfD/3ecf+VEQY1WeyZvxOw/G3joyupmv/AO8hLT/lXR1Psy4ygDjEcMqWjT3dRJE4j+GWMD/MiIMYrsHxTDHmOthZG8O5SGStkF/Nq+Hld0RFBFeUlEQfbRYTimIvEdHAyRxIbZ0rI8z3csnpvZnxnPymX9GUrTqZql8jgOzYYyP8yIg7yk9kpNnV+NutvHQ0zW/KSdzv/CskofZ1wVRcrn0L62Ruj8RmfMP+zHLH/lRFRlEFLTUsTYKWCGnhGkdPGyNg8msAC/YC1gBpsiIJy53PoOipvsiIAAAy9T1Qi+unTqiIL5KBtiScz1REAgnLZLWyCIgctzc7aIb7IiAABooRfXTp1REHJERB/9k=' : 'https://th.bing.com/th/id/OIP.G3vEdEjsR2D5Anjnj-C-cAHaHa?w=198&h=198&c=7&r=0&o=5&dpr=1.5&pid=1.7';
+            userDetails.style.display = 'flex';
+            signInPrompt.style.display = 'none';
+            feedbackForm.style.display = 'block';
+
+            // Close modal
+            signInModal.style.display = 'none';
+        }
+
+        // Sign Out Functionality
+        signOutBtn.onclick = () => {
+            userName.textContent = 'User Name';
+            userIcon.src = 'male_icon.png';
+            userDetails.style.display = 'none';
+            signInPrompt.style.display = 'block';
+            feedbackForm.style.display = 'none';
+        }
+
+        // Submit Feedback
+        function submitFeedback() {
+            const feedback = document.getElementById('feedback').value;
+            const rating = document.querySelector('input[name="rating"]:checked').value;
+            
+            // Display new review (for simplicity, appending to existing reviews)
+            const reviewContainer = document.createElement('div');
+            reviewContainer.className = 'review';
+            
+            const reviewImg = document.createElement('img');
+            reviewImg.src = userIcon.src; // Use user's profile picture
+            reviewContainer.appendChild(reviewImg);
+            
+            const reviewDetails = document.createElement('div');
+            reviewDetails.className = 'review-details';
+            reviewContainer.appendChild(reviewDetails);
+
+            const reviewerName = document.createElement('h3');
+            reviewerName.textContent = userName.textContent;
+            reviewDetails.appendChild(reviewerName);
+            
+            const reviewText = document.createElement('p');
+            reviewText.textContent = feedback;
+            reviewDetails.appendChild(reviewText);
+
+            const ratingElement = document.createElement('div');
+            ratingElement.className = 'rating';
+            ratingElement.textContent = '★★★★★'.slice(0, rating); // Display stars based on rating
+            reviewDetails.appendChild(ratingElement);
+            
+            const reviewDate = document.createElement('p');
+            reviewDate.className = 'review-date';
+            reviewDate.textContent = `Reviewed on: ${new Date().toISOString().split('T')[0]}`;
+            reviewDetails.appendChild(reviewDate);
+            
+            document.querySelector('.reviews-container').appendChild(reviewContainer);
+            
+            // Clear the form
+            document.getElementById('feedback').value = '';
+            document.querySelector('input[name="rating"]:checked').checked = false;
+        }
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
